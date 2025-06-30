@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  app:
+    image: project250630app:1.0.0
+    build: .
+    ports:
+      - "8080:8080"
