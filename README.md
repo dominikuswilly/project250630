@@ -71,3 +71,11 @@ curl --location 'http://localhost:8080/v1/public/notes?search=a' \
 curl --location --request DELETE 'http://localhost:8080/v1/public/notes/1' \
 --header 'Cookie: JSESSIONID=68066365EDB9186488FC16E5EFCC4B70'
 ```
+
+## Swagger
+
+https://imgur.com/spIRlYB
+
+## Donation
+
+https://saweria.co/dominikuswilly
