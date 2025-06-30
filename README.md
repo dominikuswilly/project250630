@@ -29,3 +29,45 @@ cd target
 ```shell
 java -jar project250630-0.0.1-SNAPSHOT.jar
 ```
+
+## CURL
+
+`[POST] /v1/public/notes`
+
+```shell
+curl --location 'http://localhost:8080/v1/public/notes' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: JSESSIONID=68066365EDB9186488FC16E5EFCC4B70' \
+--data '{
+    "title":"a",
+    "content":"a"
+}'
+```
+
+`[GET] /v1/public/notes`
+
+```shell
+curl --location 'http://localhost:8080/v1/public/notes' \
+--header 'Cookie: JSESSIONID=68066365EDB9186488FC16E5EFCC4B70'
+```
+
+`[GET] /v1/public/notes/1`
+
+```shell
+curl --location 'http://localhost:8080/v1/public/notes/1' \
+--header 'Cookie: JSESSIONID=68066365EDB9186488FC16E5EFCC4B70'
+```
+
+`[GET] /v1/public/notes?search=a`
+
+```shell
+curl --location 'http://localhost:8080/v1/public/notes?search=a' \
+--header 'Cookie: JSESSIONID=68066365EDB9186488FC16E5EFCC4B70'
+```
+
+`[DELETE] /v1/public/notes`
+
+```shell
+curl --location --request DELETE 'http://localhost:8080/v1/public/notes/1' \
+--header 'Cookie: JSESSIONID=68066365EDB9186488FC16E5EFCC4B70'
+```
