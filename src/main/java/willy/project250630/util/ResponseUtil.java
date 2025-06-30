@@ -34,9 +34,18 @@ public class ResponseUtil {
 
     public static ResponseEntity<Object> notFoundDataResponse(String message){
         Map<String,Object> body = Map.of(
-                "status", HttpStatus.OK.value(),
+                "status", HttpStatus.NOT_FOUND.value(),
                 "message", message
         );
-        return new ResponseEntity<>(body, HttpStatus.OK);
+        return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
     }
+
+    public static ResponseEntity<Object> internalServerErrorResponse(String message) {
+        Map<String, Object> body = Map.of(
+                "status", HttpStatus.INTERNAL_SERVER_ERROR.value(),
+                "message", message
+        );
+        return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
 }

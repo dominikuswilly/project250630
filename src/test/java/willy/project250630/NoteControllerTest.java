@@ -12,7 +12,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import willy.project250630.controller.NoteController;
+import willy.project250630.controller.publicapi.NoteController;
 import willy.project250630.dto.notes.NoteDto.ReqNoteDto;
 import willy.project250630.model.tnote.TNote;
 import willy.project250630.service.NoteService;
@@ -39,13 +39,6 @@ public class NoteControllerTest {
 
         // Prepare the mocked response from service
         TNote tNote = new TNote(1L, "a", "a");
-
-        // Build expected response body map to match ResponseUtil structure
-        var responseBody = Map.of(
-                "status", 201,
-                "message", "Note Created Successfully",
-                "data", tNote
-        );
 
         // Mock behavior
         Mockito.when(noteService.createNote(Mockito.any(ReqNoteDto.class)))
